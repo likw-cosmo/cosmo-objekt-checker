@@ -74,14 +74,14 @@ module.exports = {
       '24': 'jiyeon',
 
     }
-    const objektId = (`${num}${physical?physical:''}`).trim();
+    const objektId = (`${num}${physical?physical:''}`).trim().toUpperCase();
     const link = `https://apollo.cafe/objekts?id=${seasonList[season]}01-${memberList[member]}-${objektId}`
-    const objekt = await webScrap(link)
-    const seasonTitle = `[${seasonList[season].charAt(0).toUpperCase() + seasonList[season].slice(1)}01]`
+    const seasonTitle = `${seasonList[season].charAt(0).toUpperCase() + seasonList[season].slice(1)}01`
     const memberTitle = `${memberList[member].charAt(0).toUpperCase() + memberList[member].slice(1)}`
+    const objekt = await webScrap(link, seasonTitle, memberTitle, objektId)
     // await interaction.reply(`The objekt contect: https://apollo.cafe/objekts?id=${seasonList[season]}01-${memberList[member]}-${objektId}`);
     const imageEmbed = new EmbedBuilder()
-      .setTitle(`${seasonTitle} ${memberTitle} ${objektId.toUpperCase()}`)
+      .setTitle(`[${seasonTitle}] ${memberTitle} ${objektId}`)
       .setImage(objekt.link)
       // .setDescription(objekt.desc)
       .setColor(0x0099FF)
