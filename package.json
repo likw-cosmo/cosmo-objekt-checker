@@ -4,11 +4,14 @@
   "description": "A discord bot that can help you find the specific objekt with member, seasons, and whether physical, like 5 (yooyeon) D307Z.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commands": "node deploy-commands.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.5",
+    "cheerio": "^1.0.0",
     "discord.js": "^14.15.3"
   },
   "devDependencies": {
