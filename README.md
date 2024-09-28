@@ -25,3 +25,7 @@ podman build -t discord-bot .
 
 podman run -p 3000:3000 discord-bot
 ```
+
+## Reference
+
+Data reference and data credit from apollo.cafe
