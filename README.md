@@ -13,5 +13,5 @@ node deploy-commands.js
 Run the Bot
 
 ```shell
-node .
+node start
 ```
