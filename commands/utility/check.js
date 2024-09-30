@@ -99,8 +99,9 @@ module.exports = {
       .setDescription(objekt.objektMetaDataResponse.description)
       .setColor(0x0099ff)
       .setFooter({
-        text: "Credit",
-        iconURL: "https://i.imgur.com/AfFp7pu.png",
+        text: "Credit by Likw",
+        iconURL:
+          "https://resources.cosmo.fans/images/user-profile/2024/07/10/02/600/f77db80ac6d94c3b87448f9eb293a70a20240710023502358.jpeg",
       });
     // .addFields(
     //   { name: 'Rarity', value: objekt.rarity },
