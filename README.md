@@ -26,6 +26,20 @@ podman build -t discord-bot .
 podman run -p 3000:3000 discord-bot
 ```
 
-## Reference
+### pm2 command
 
-Data reference and data credit from apollo.cafe
+```shell
+pm2 start your-app-name.js --watch
+
+pm2 stop your-app-name.js
+```
+
+## Credits
+
+This project was created by Your Name.
+
+Special thanks to Contributor Name for their contributions.
+
+### Reference
+
+Data reference and data credit from [apollo.cafe](https://apollo.cafe/)

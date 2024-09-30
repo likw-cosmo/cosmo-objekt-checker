@@ -97,7 +97,11 @@ module.exports = {
       .setTitle(objekt.objektInfoResponse.collectionId)
       .setImage(objekt.objektInfoResponse.frontImage)
       .setDescription(objekt.objektMetaDataResponse.description)
-      .setColor(0x0099ff);
+      .setColor(0x0099ff)
+      .setFooter({
+        text: "Credit",
+        iconURL: "https://i.imgur.com/AfFp7pu.png",
+      });
     // .addFields(
     //   { name: 'Rarity', value: objekt.rarity },
     // )
