@@ -36,9 +36,9 @@ pm2 stop your-app-name.js
 
 ## Credits
 
-This project was created by Your Name.
+This project was created by Likw.
 
-Special thanks to Contributor Name for their contributions.
+Feel free to send a objekt to me, ID: Likw.
 
 ### Reference
 
