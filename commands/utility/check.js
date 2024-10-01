@@ -41,7 +41,7 @@ module.exports = {
     // tripleS member name list
     const memberList = {
       1: "seoyeon",
-      2: "haerin",
+      2: "hyerin",
       3: "jiwoo",
       4: "chaeyeon",
       5: "yooyeon",
