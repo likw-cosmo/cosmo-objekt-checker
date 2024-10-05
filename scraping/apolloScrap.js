@@ -10,13 +10,21 @@ module.exports.apolloScrap = async (
   const objektInfoLink = `https://apollo.cafe/api/objekts/by-slug/`;
   const objektMetaDataLink = `https://apollo.cafe/api/objekts/metadata/`;
   try {
-    const [objektInfoResponse, objektMetaDataResponse] = await Promise.all([
+    const [
+      objektInfoResponse,
+      { metadata: objektMetaDataResponse, copies: objeketCopiesResponse },
+    ] = await Promise.all([
+      // 1. Objekt Info
       axios.get(objektInfoLink + slug).then(({ data }) => data),
-      axios.get(objektMetaDataLink + slug).then(({ data }) => data.metadata),
+      // 2. Objekt MetaData and Copies
+      axios
+        .get(objektMetaDataLink + slug)
+        .then(({ data }) => ({ metadata: data.metadata, copies: data.copies })),
     ]);
     return {
       objektInfoResponse,
       objektMetaDataResponse,
+      objeketCopiesResponse,
     };
   } catch (error) {
     console.error(error);

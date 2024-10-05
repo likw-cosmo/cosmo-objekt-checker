@@ -92,11 +92,43 @@ module.exports = {
         error
       );
     }
+    function getRarity(copies) {
+      if (copies <= 10) {
+        return "impossible";
+      }
+      if (copies <= 25) {
+        return "extremely-rare";
+      }
+      if (copies <= 50) {
+        return "very-rare";
+      }
+      if (copies <= 100) {
+        return "rare";
+      }
+      if (copies <= 350) {
+        return "uncommon";
+      }
+      return "common";
+    }
+
     // await interaction.reply(`The objekt contect: https://apollo.cafe/objekts?id=${seasonList[season]}01-${memberList[member]}-${objektId}`);
     const imageEmbed = new EmbedBuilder()
       .setTitle(objekt.objektInfoResponse.collectionId)
       .setImage(objekt.objektInfoResponse.frontImage)
       .setDescription(objekt.objektMetaDataResponse.description)
+      .addFields(
+        { name: "Class", value: objekt.objektInfoResponse.class, inline: true },
+        {
+          name: "Copies",
+          value: objekt.objeketCopiesResponse.copies,
+          inline: true,
+        },
+        {
+          name: "Rarity",
+          value: getRarity(objekt.objeketCopiesResponse.copies),
+          inline: true,
+        }
+      )
       .setColor(0x0099ff)
       .setFooter({
         text: "Credit by Likw",
