@@ -4,31 +4,24 @@ A discord bot that can help you find the specific objekt with member, seasons, a
 
 ## Command
 
+
+```shell
 ### npm command
 
-Deploy the code
+#Deploy the code
+npm run commands
 
-```shell
-node deploy-commands.js
-```
-
-Run the Bot
-
-```shell
-node start
-```
+#Run the Bot
+npm run start
 
 ### docker command
 
-```shell
 podman build -t discord-bot .
 
 podman run -p 3000:3000 discord-bot
-```
 
 ### pm2 command
 
-```shell
 pm2 start your-app-name.js --watch
 
 pm2 stop your-app-name.js

@@ -110,22 +110,21 @@ module.exports = {
       }
       return "common";
     }
-
     // await interaction.reply(`The objekt contect: https://apollo.cafe/objekts?id=${seasonList[season]}01-${memberList[member]}-${objektId}`);
     const imageEmbed = new EmbedBuilder()
       .setTitle(objekt.objektInfoResponse.collectionId)
       .setImage(objekt.objektInfoResponse.frontImage)
-      .setDescription(objekt.objektMetaDataResponse.description)
+      .setDescription(objekt.objektMetaDataResponse.metadata.description)
       .addFields(
         { name: "Class", value: objekt.objektInfoResponse.class, inline: true },
         {
           name: "Copies",
-          value: objekt.objeketCopiesResponse.copies,
+          value: objekt.objektMetaDataResponse.copies.toString(),
           inline: true,
         },
         {
           name: "Rarity",
-          value: getRarity(objekt.objeketCopiesResponse.copies),
+          value: getRarity(objekt.objektMetaDataResponse.copies).toString(),
           inline: true,
         }
       )
