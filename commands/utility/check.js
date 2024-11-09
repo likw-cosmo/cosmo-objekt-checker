@@ -9,6 +9,7 @@ const seasonList = {
   b: "binary",
   c: "cream",
   d: "divine",
+  e: "ever",
 };
 // tripleS member name list
 const memberList = {
