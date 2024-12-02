@@ -139,12 +139,12 @@ module.exports = {
         { name: "Class", value: objekt.objektInfoResponse.class, inline: true },
         {
           name: "Copies",
-          value: objekt.objektMetaDataResponse.copies.toString(),
+          value: objekt.objektMetaDataResponse.total.toString(),
           inline: true,
         },
         {
           name: "Rarity",
-          value: getRarity(objekt.objektMetaDataResponse.copies).toString(),
+          value: getRarity(objekt.objektMetaDataResponse.total).toString(),
           inline: true,
         }
       )
