@@ -46,7 +46,7 @@ const atrmsMemberList = {
   7: "jinsoul",
   8: "choerry",
 };
-
+const test = "test";
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("check")
