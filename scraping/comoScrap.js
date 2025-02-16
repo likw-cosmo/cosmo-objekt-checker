@@ -18,18 +18,20 @@ module.exports.comoScrap = async (address, dateGroupIndex, artist) => {
   ];
   const selectedDateGroup = dateGroups[dateGroupIndex];
   let { hasNext, objekts, nextStartAfter } = response.data;
+  let pageCount = 0; // Initialize page counter
 
-  while (hasNext) {
+  while (hasNext && pageCount < 10) {
+    // Add page limit condition
     try {
       response = await axios.get(`${apiUrl}&page=${nextStartAfter}`);
       objekts = objekts.concat(response.data.objekts);
       hasNext = response.data.hasNext;
       nextStartAfter = response.data.nextStartAfter;
+      pageCount++; // Increment page counter
     } catch (error) {
       throw error;
     }
   }
-
   const mappedObjekts = objekts.map((objekt) => ({
     collectionId: objekt.collectionId,
     comoAmount: objekt.comoAmount,
