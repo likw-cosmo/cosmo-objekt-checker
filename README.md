@@ -4,7 +4,6 @@ A discord bot that can help you find the specific objekt with member, seasons, a
 
 ## Command
 
-
 ```shell
 ### npm command
 
